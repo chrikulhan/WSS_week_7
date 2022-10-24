@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interval</title>
+</head>
+<body>
+  <h1>What time is it?</h1>
+  <p id ="time"></p>
+
+    <script>
+      let timeElement = document.querySelector('#time')
+
+      // setInterval() //setInterval is built in to your browser,
+      //needs two arguments: handler/callback function AND a timeout
+      //will wait that number of milliseconds and call the function
+      //will repeat forever while the page is shown in the browswer
+      // like setTimeout
+      setInterval(function() {
+      //  what is the current date and time?
+        let date = Date() //will be initialized to *right now*
+        timeElement.innerHTML= Date() //page updates every second (COOL!)
+      }, 1000) //like to show the time and update every second
+
+      // setInterval  calls a function repeatedly
+      // Your Turn(see above): What Time Is It? page
+      // Do you see the date and time updating? Yes I did!
+      // 1000 is the interval between function calls
+      // Interval specified in milliseconds, 1000ths of a second
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+<!--Functions as arguments to other functions-->
+
+<!--You’ve also used these with event handlers-->
+<!--Function definition as argument to other function – a callback-->
+<!--When the event happens, the callback function will be called-->
+<!--This pattern is very common, to describe what tasks should be performed sometime in the future-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id ="button">Click here!</button>
+
+<script>
+    let button = document.querySelector('#button')
+    button.addEventListener('click', function(){ //other types of event listeners (mouseover, keyup, input, etc.)
+        //what happens when the button is clicked?
+        //we collect together code
+        alert('You clicked the button!')
+        button.innerHTML = 'The button has been clicked'
+    }) //the function (above) will happen in the future
+//    We are describing some tasks that may happen. We are giving the
+//    logic to the event listener function and addEventListener will
+//    call the event when something else happens (at some time in the future)
+
+
+
+</script>
+
+</body>
+</html>

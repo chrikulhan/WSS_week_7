@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeout</title>
+</head>
+<body>
+<h1>Expect an alert in 3 seconds after page load</h1>
+
+<script>
+  setTimeout(function(){
+      //setTimeout works in all browsers
+    //  setTimeout takes 2 arguments: 1st is handler (same as callback function)
+    //  setTime 2nd argument: 2nd is
+    alert("Hello! This happened 3 seconds after the page loaded.")
+  }, 3000) //3000 is the delay before the function is called.
+//  Delay specified in milliseconds, 1000th of a second (3000 milliseconds = 3 seconds)
+//  ALL the interactivity and javascript is paused on the page.
+
+//  video 2 paused at 0:43 hungry for dinner!
+</script>
+</body>
+</html>
