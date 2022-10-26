@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API_Application_Programming_Interface</title>
+</head>
+<body>
+
+<!--API: Application Programming Interface-->
+<!--Two meanings:-->
+
+<!--1. a general term for the methods and functions provided by a program or library-->
+<!--"JavaScript’s API includes methods like querySelector() and setInterval()"-->
+<!--Leaflet API includes methods like marker and bindPopup -->
+
+<!--2. A service provided by a server that other programs can connect to and make
+requests over HTTP/HTTPS(browser uses this same language), and receive responses that can be used in a program-->
+<!--Responses are often in JSON format, but can be various other types of data (can be plain text, XML, an image, etc.-->
+<!--Remember your web browser also makes HTTP requests, and a server responds with
+HTML, CSS, images, JS…-->
+
+<!--Many APIs – for example, the World Bank has an API that provides data about countries-->
+<!--Income level, GDP, financial information, climate….-->
+
+<!--Try this URL in your browser-->
+<!--https://api.worldbank.org/v2/country/br?format=json    This is a request for information about Brazil-->
+<!--Change br – the country code for Brazil - to the country code of your choice – for example, try ch for Switzerland
+or in for India or zw for Zimbabwe or us for the USA-->
+<!--https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes-->
+
+<!--Fetching data from an API-->
+<!--Request data, expect a response-->
+
+<!--One of two things may happen: -->
+<!--  1. Request may error
+          a. if not understood by the server (ex. URL is incorrect)
+          b. Not allowed to request data (permissions error)
+          c. no internet connection
+          d. etc.
+          -->
+<!--  2. Or, a response can be received (probably JSON), which must be processed before use-->
+<!--      a. processing step might work, (and then there will be data (including a variable with a response) -->
+<!--      b. another error might happen
+              **might be expecting JSON data and get plain text back
+              **might get an image
+              **might get a media file
+              **etc. -->
+
+<!--This might work, data is now available to code-->
+<!--or an error may be encountered (example: expected JSON data, received an image)-->
+
+<!--With callbacks, you’d need to write something like this-->
+
+<!--That’s a lot of parenthesis – it’s messy and hard to keep track of what’s happening-->
+
+<!--Don’t write this code, it won’t work-->
+
+<!--We'll see another way to write this logic soon-->
+
+<!--pause at video 3 6:49 due to internet connectivity issues. -->
+
+
+
+
+
+</body>
+</html>

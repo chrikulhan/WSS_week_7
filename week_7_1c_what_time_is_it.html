@@ -28,6 +28,28 @@
       // 1000 is the interval between function calls
       // Interval specified in milliseconds, 1000ths of a second
 
+    //  video 2 YOUR TURN
+      //  Modify your What Time Is It? page so the setInterval function
+      //  callback uses the arrow function notation
+      // Hint: do you still need parenthesis in a function definition,
+      // even if it doesn't have any parameters?
+
+      //original (from above)
+      setInterval(function() {
+          //  what is the current date and time?
+          let date = Date() //will be initialized to *right now*
+          timeElement.innerHTML= Date() //page updates every second (COOL!)
+      }, 1000)
+
+      //Same function, using arrow notation (removed the word "function" and
+      // added an arrow between the parentheses and the beginning curly brace:
+      //even if there are no arguments, you must have the empty parentheses
+      setInterval(() => {
+          let date = Date()
+          timeElement.innerHTML= Date() //page updates every second (COOL!)
+      }, 1000)
+
+
     </script>
 
 </body>

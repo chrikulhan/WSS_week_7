@@ -52,3 +52,66 @@ animals.forEach(function(animal, index){ //index =(where are you in the array?)
 // Animal number 0 is Giraffe
 // Animal number 1 is Elephant
 // Animal number 2 is Yak
+
+/*Another way to write this code vvv using the arrow notation (below)*/
+// animals.forEach(function(animal, index){ //index =(where are you in the array?)
+//     console.log(animal, index)
+// })
+//output:
+// Giraffe 0
+// Elephant 1
+// Yak 2
+
+//Arrow notation:
+animals.forEach((animal, index) => {
+    console.log(animal,index)
+})
+//output:
+// Giraffe 0
+// Elephant 1
+// Yak 2
+
+//another way to make the code even more minimal
+// (if only one line of code, you can omit the curly braces: )
+animals.forEach((animal, index) =>
+    console.log(animal,index)
+)
+// output:
+// Giraffe 0
+// Elephant 1
+// Yak 2
+
+//can write the code all on one line:
+animals.forEach((animal, index) => console.log(animal,index))
+
+//another variant-if we only need to know the data, but not the index:
+//regular callback function:
+animals.forEach(function(animal){
+    console.log(animal)
+})
+//output:
+// Giraffe
+// Elephant
+// Yak
+
+//shortened arrow version:
+animals.forEach((animal) => {
+    console.log (animal)
+})
+
+//output:
+// Giraffe
+// Elephant
+// Yak
+
+//even more simple, but only works with ONE line of code
+
+// (delete curly braces):
+animals.forEach((animal) =>
+    console.log (animal))
+
+// (move all on one line)
+animals.forEach((animal) => console.log (animal))
+
+// (if there is only one argument, can omit the parentheses as well:
+animals.forEach(animal => console.log (animal))
