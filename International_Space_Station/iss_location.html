@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where is the ISS?</title>
+<!--1. connect the javascript file to this html file:-->
+    <script async defer src = "fetch.js"></script>
+    <!--async means load the script at the same time the page is running, but don't
+    run it (defer)
+    **want the entire page to be loaded and ready before the script starts running -->
+
+</head>
+<body>
+
+  <h1>Where is the ISS? </h1>
+<!--2. create these landing places for the latitude and longitude that will come from the url-->
+  <div>
+    <p>ISS latitude:<span id="iss-lat"></span></p>
+    <p>ISS longitude:<span id="iss-long"></span></p>
+  </div>
+
+</body>
+</html>
