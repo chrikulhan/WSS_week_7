@@ -1,14 +1,3 @@
-// Better approach
-//
-// -Recursive setTimeout (look for video 7 edits)
-// -Call the iss function
-// -At the end of the iss function, the iss function will call itself
-// after a timeout
-// -There will now always be update ms between the end of one fetch()
-// and the start of the next, no matter how long it takes to fetch
-// the data
-// **the previous code fetch.js name was changed to video_6_fetch.js
-
 //video 4-3. make a variable for the url:
 
 let url = 'https://api.wheretheiss.at/v1/satellites/25544'
@@ -21,11 +10,6 @@ let timeIssLocationFetched = document.querySelector('#time')
 
 //video 5-8b:
 let update = 10000
-
-//video 6c:
-//what if the server just isn't working. Need to have a way to stop:
-//declare variable (max failed attempts:)
-let maxFailedAttempts = 3
 
 //video 5-9a need a variable to represent the ISS marker:
 let issMarker
@@ -112,88 +96,23 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // https://javascript.info/promise-basics
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
 
-//video 6a-switch this around to make it a setTimeOut:
 
-
-// //video 5-7
-// iss() // call function one time to start (otherwise user will need to wait
-// // 10 seconds before anything is visible.
-
-//video 6d:
 //video 5-7
-iss(maxFailedAttempts) // call function one time to start (otherwise user will need to wait
-
+iss() // call function one time to start (otherwise user will need to wait
 // 10 seconds before anything is visible.
-
 
 //video 5-6 call the iss function using set interval:
 //(function, interval) interval = time between checking
 // setInterval(iss, 10000) // 10 seconds, not faster because it doesn't move that quickly
 
-//video 6a-remove setInterval
 //video 5-8a: move update into a variable (from above)
-// setInterval(iss,update) //defined above the map definition WAY above^^^.
+setInterval(iss,update) //defined above the map definition WAY above^^^.
 
 
-// //video 5-5
-// //take the fetch portion above and put it into a function so it can be run
-// // every 10 seconds, without re-writing the code:
-// function iss() {
-//     fetch(url).then((res) => {
-//         return res.json() //process response into JSON
-//     }).then((issData) => {
-//         console.log(issData)
-// //    this will move data found in devtools onto the page.
-//         let lat = issData.latitude
-//         let long = issData.longitude
-//         let dateAndTime =
-//             //issLat/issLong is the span element on the html page
-//             // (so we send the above info to our page)
-//             issLat.innerHTML = lat
-//         issLong.innerHTML = long
-//
-//         //     //video 5-9b //before creating the specialized marker
-//         // //    create marker if it doesn't exist (not marker)
-//         //     if (!issMarker) {
-//         //         //create marker: (parenthesis describe where it is, array of the lat,long)
-//         //         issMarker = L.marker([lat,long]).addTo(map)
-//         //     //    if there is NO issMarker, create one:
-//         //     } else {
-//         //         issMarker.setLatLng([lat,long])
-//         //     }
-//
-//         //video 5-10c after creating the specialized marker:
-//         //    create marker if it doesn't exist (not marker)
-//         if (!issMarker) {
-//             //create marker: (parenthesis describe where it is, array of the lat,long)
-//             issMarker = L.marker([lat,long], {icon : icon}).addTo(map)
-//             //    if there is NO issMarker, create one:
-//         } else {
-//             issMarker.setLatLng([lat,long])
-//         }
-//         //    move marker if it does exist
-//         let now = Date()
-//         timeIssLocationFetched.innerHTML = `This data was fetched at ${now}`
-//     }).catch((err) => {
-//         console.log('ERROR!', err)
-//     //    video 7b: add finally here:
-//     }).finally( () => {
-//         //setTimeOut to when the iss function has elapsed,
-//         // after update number of seconds(declared here near the top)
-//         setTimeout(iss, update)
-//     })
-// }
-
-//video 6e: modify the function to take a parameter:
 //video 5-5
 //take the fetch portion above and put it into a function so it can be run
 // every 10 seconds, without re-writing the code:
-function iss(attempts) {
-    //video 6h: need to check here how many attempts:
-    if (attempts <= 0 ){
-        alert('Failed to contact ISS server after 3 attempts.')
-        return
-    }
+function iss() {
     fetch(url).then((res) => {
         return res.json() //process response into JSON
     }).then((issData) => {
@@ -202,20 +121,20 @@ function iss(attempts) {
         let lat = issData.latitude
         let long = issData.longitude
         let dateAndTime =
-            //issLat/issLong is the span element on the html page
-            // (so we send the above info to our page)
-            issLat.innerHTML = lat
+        //issLat/issLong is the span element on the html page
+        // (so we send the above info to our page)
+        issLat.innerHTML = lat
         issLong.innerHTML = long
 
-        //     //video 5-9b //before creating the specialized marker
-        // //    create marker if it doesn't exist (not marker)
-        //     if (!issMarker) {
-        //         //create marker: (parenthesis describe where it is, array of the lat,long)
-        //         issMarker = L.marker([lat,long]).addTo(map)
-        //     //    if there is NO issMarker, create one:
-        //     } else {
-        //         issMarker.setLatLng([lat,long])
-        //     }
+    //     //video 5-9b //before creating the specialized marker
+    // //    create marker if it doesn't exist (not marker)
+    //     if (!issMarker) {
+    //         //create marker: (parenthesis describe where it is, array of the lat,long)
+    //         issMarker = L.marker([lat,long]).addTo(map)
+    //     //    if there is NO issMarker, create one:
+    //     } else {
+    //         issMarker.setLatLng([lat,long])
+    //     }
 
         //video 5-10c after creating the specialized marker:
         //    create marker if it doesn't exist (not marker)
@@ -226,21 +145,11 @@ function iss(attempts) {
         } else {
             issMarker.setLatLng([lat,long])
         }
-        //    move marker if it does exist
+    //    move marker if it does exist
         let now = Date()
         timeIssLocationFetched.innerHTML = `This data was fetched at ${now}`
-    //    6f: everytime there is an error from iss(attempts), one will be
-    //    subtracted from attempts:
     }).catch((err) => {
-        attempts -- //or attempts = attempts - 1
         console.log('ERROR!', err)
-        //    video 7b: add finally here:
-    }).finally( () => {
-        //setTimeOut to when the iss function has elapsed,
-        // after update number of seconds(declared here near the top)
-        // 6g: need to provide the attempts variable. You need to list the
-        //parameters of the iss function AFTER the timeout time.
-        setTimeout(iss, update, attempts)
     })
 }
 

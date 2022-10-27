@@ -1,0 +1,15 @@
+https://javascript.info/settimeout-setinterval
+
+**Problem with setInterval**
+
+-A time diagram with setInterval
+
+-What happens if the fetch() takes a long time?
+Perhaps longer than the interval?
+
+**Another way to arrange the call to the ISS function:
+-Use a recursive setTimeout
+    *function is called
+    *when the function ends, we will wait another 10 seconds
+    after that function is done before making another function
+    call. 
