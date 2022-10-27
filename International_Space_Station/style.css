@@ -1,0 +1,11 @@
+/*video 5-3
+set height width of the map div here:
+*/
+#iss-map{
+    height: 400px;
+    width: 500px;
+/*    add a border to make sure this works*/
+    border: 1px black solid;
+/*    go to html page and confirm the div (currently an empty
+box is showing the border*/
+}

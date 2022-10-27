@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Where_in_the_world_is_the_International_Space_Station?</title>
-</head>
-<body>
-
 <!--Another API – Where is the International Space Station?-->
 
 <!--https://wheretheiss.at-->
@@ -31,5 +23,13 @@ units	"kilometers"-->
 <!--Will take a few seconds to load the first time you make a request-->
 
 <!--page updates every 10 seconds-->
-</body>
-</html>
+
+Other notes:
+Map tiles - this video uses the MapBox tile layer.
+Use the same Open Street Map tile layer from last week, https://git.io/JUCvV.
+The map tiles look slightly different but the API code will work in the same way.
+When you first add the tile layers to your program, your file will look like this
+https://github.com/claraj/week6-examples/blob/4c94d66d9ced8c7ece73ae1c6ad9b350a87336cc/fetch_iss_and_map/fetch.js#L10-L12
+
+If you want to know when the ISS flies above Minnesota, and how to see it:
+https://spotthestation.nasa.gov/

@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Where is the ISS?</title>
-<!--1. connect the javascript file to this html file:-->
+<!--    video 5
+video 5-1- go to leaflet site: (https://leafletjs.com/examples/quick-start/)
+Add the css (as per instructions on the leaflet website (above the fetch.js)-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin=""/>
+<!--    add the javascript AFTER the CSS from leaflet as per instructions-->
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+            crossorigin=""></script>
+
+<!--    link to our own stylesheet:-->
+    <link rel ="stylesheet" type = "text/css" href = "style.css">
+
+<!--video 4-1. connect the javascript file to this html file:-->
     <script async defer src = "fetch.js"></script>
     <!--async means load the script at the same time the page is running, but don't
     run it (defer)
@@ -13,11 +27,24 @@
 <body>
 
   <h1>Where is the ISS? </h1>
-<!--2. create these landing places for the latitude and longitude that will come from the url-->
+<!--video 4-2. create these landing places for the latitude and longitude that will come from the url-->
   <div>
+      <p>This page will update every 10 seconds.</p>
+      <p><span id = "time"></span> <span id="date"></span> </p>
     <p>ISS latitude:<span id="iss-lat"></span></p>
     <p>ISS longitude:<span id="iss-long"></span></p>
+
   </div>
+
+<!--video 5-2 Add a div used to display the map:
+-give the div and id
+-a div with no content will have height zero, so we won't be able to see it
+ (go to style.css to set the height and width of the below div)
+-->
+    <div id = "iss-map"></div>
+
+<!--video 5-11:add attribution from the icon artist: https://thenounproject.com/icon/iss-956251/-->
+    <p>Icon of iss by Viktor Korobkov from Noun Project </p>
 
 </body>
 </html>
