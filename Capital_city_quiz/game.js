@@ -9,10 +9,20 @@ let resultTextElement = document.querySelector('#result')
 // organized in the order of the script tags. So the countriesAndCodes array from countries.js
 // is available to this script.
 
+submitButton.addEventListener('click', function(){
+//    todo add a cascade of checking:
+//    1.was something entered
+//    2. was it found in the countries.js file?
+//    3. does it match the capital city found in the countries. js file?
+})
+
 console.log(countriesAndCodes)  // You don't need to log countriesAndCodes - just proving it is available 
 
 
 // TODO when the page loads, select an element at random from the countriesAndCodes array
+let myArray = ['January', 'February', 'March'];
+let rand = myArray[(Math.random() * myArray.length) | 0]
+console.log(rand)
 
 // TODO display the country's name in the randomCountryElement 
 

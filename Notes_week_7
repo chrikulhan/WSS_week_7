@@ -1,0 +1,9 @@
+
+Other APIs to use
+
+List here https://github.com/public-apis/public-apis
+
+Tips for working with APIs on pages
+    -Use the free APIs which don't need authentication or keys,
+        since you won't be able to keep those secret
+    -Only APIs that use HTTPS work on GitHub pages
