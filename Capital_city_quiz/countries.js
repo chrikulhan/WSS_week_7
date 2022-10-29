@@ -1,5 +1,5 @@
-// Checking if this is pushing properly/*
-Data from 
+// Checking if this is pushing properly
+/*Data from
 https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes
 
 What is a country, and what is a capital, varies depending on who you ask. 
