@@ -20,9 +20,12 @@ console.log(countriesAndCodes)  // You don't need to log countriesAndCodes - jus
 
 
 // TODO when the page loads, select an element at random from the countriesAndCodes array
-let myArray = ['January', 'February', 'March'];
-let rand = myArray[(Math.random() * myArray.length) | 0]
-console.log(rand)
+//reference:https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
+
+const months = ["January", "February", "March", "April", "May", "June", "July"];
+
+const random = Math.floor(Math.random() * months.length);
+console.log(random, months[random]);
 
 // TODO display the country's name in the randomCountryElement 
 
